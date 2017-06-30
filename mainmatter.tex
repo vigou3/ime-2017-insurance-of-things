@@ -1,0 +1,237 @@
+\section{Business problem}
+
+\begin{frame}
+  \frametitle{Insurance coverage for medium to large collections}
+
+  \TPGrid{4}{5}
+  \textblockorigin{0mm}{0mm}
+  \begin{textblock*}{4\TPHorizModule}(0mm,\TPVertModule)
+    \includegraphics*[height=1.5\TPVertModule,width=\TPHorizModule]{Wine-bottles}
+    \includegraphics*[height=1.5\TPVertModule,width=\TPHorizModule]{631px-Many_Stamps_of_Romania}
+    \includegraphics*[height=1.5\TPVertModule,width=\TPHorizModule]{640px-Cameras-TH}
+    \includegraphics*[height=1.5\TPVertModule,width=\TPHorizModule]{640px-Fridge_magnets_board}
+  \end{textblock*}
+  \begin{textblock*}{4\TPHorizModule}(0mm,2.5\TPVertModule)
+    \includegraphics*[height=1.5\TPVertModule,width=\TPHorizModule]{683px-Match_and_match_labels_100_years_ago}
+    \includegraphics*[height=1.5\TPVertModule,width=\TPHorizModule]{Collection_of_bottle_openers}
+    \includegraphics*[height=1.5\TPVertModule,width=\TPHorizModule]{Pokemon_collection}
+    \includegraphics*[height=1.5\TPVertModule,width=\TPHorizModule]{360px-Wall_of_guitars}
+  \end{textblock*}
+
+\end{frame}
+
+\section{Game changer}
+
+\begin{frame}
+  \frametitle{Insurance of Things}
+
+  \begin{minipage}{0.48\linewidth}
+    \includegraphics[width=\linewidth]{Internet_of_Things}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.48\linewidth}
+    Digital technology allows to:
+    \begin{itemize}
+    \item monitor each individual item in a collection
+    \item assess market value of collection in real time
+    \end{itemize}
+  \end{minipage}
+\end{frame}
+
+\section{Actuarial challenges}
+
+\begin{frame}[plain]
+  \begin{enumerate}
+  \item No prior data
+    \begin{itemize}
+    \item we need a risk model
+    \end{itemize}
+    \medskip
+  \item Different types of peril
+    \begin{itemize}
+    \item different model for each peril
+    \end{itemize}
+    \medskip
+  \item Inherent dependence between a large number of risks
+    \begin{itemize}
+    \item mathematically tractable
+    \end{itemize}
+    \medskip
+  \item Premium by range of collection ``size''
+    \begin{itemize}
+    \item capital allocation problem
+    \end{itemize}
+  \end{enumerate}
+\end{frame}
+
+\section{One solution}
+
+\begin{frame}
+  \frametitle{Different types of peril}
+
+  \begin{assumption}
+    Claims due to three main types of peril:
+    \begin{enumerate}
+    \item accidental damage, theft, vandalism; \alert{few} items affected ($<$ 10 on average)
+    \item fire; \alert{100\%} of items affected
+    \item flooding, water damage, sewer backup; \alert{25\%} of items
+      affected
+    \end{enumerate}
+  \end{assumption}
+  \pause
+
+  \begin{consequence}
+    Aggregate claim amount for insured $i = 1, \dots, n$ for one period:
+    \begin{equation*}
+      S_i = S_i^\bris + S_i^\feu + S_i^\eau
+    \end{equation*}
+  \end{consequence}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Dependence -- Step I}
+
+  \begin{assumption}
+    Aggregate claim amount for a given type of peril is compound Poisson:
+    \begin{equation*}
+      S_i^\DOT = X_{i1}^\DOT + \dots + X_{iN_i^\DOT}^\DOT
+      \sim \text{Compound Poisson}(\lambda^\DOT, F^\DOT)
+    \end{equation*}
+  \end{assumption}
+  \pause
+
+  \begin{consequence}
+    Aggregate claim amount for insured $i$ is compound Poisson:
+    \begin{equation*}
+      S_i = S_i^\bris + S_i^\feu + S_i^\eau \sim
+      \text{Compound Poisson}(\lambda, F),
+    \end{equation*}
+    with
+    \begin{align*}
+      \lambda &= \lambda^\bris + \lambda^\feu + \lambda^\eau \\
+      F(x) &= \frac{\lambda^\bris F^\bris(x) + \lambda^\feu F^\feu(x) +
+               \lambda^\eau F^\eau(x)}{\lambda}
+      \end{align*}
+  \end{consequence}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Dependence -- Step II}
+
+  \begin{assumption}
+    Amount of single claim is
+    \begin{equation*}
+      X_{ij}^\DOT = V_1 + ... + V_{M_{ij}^\DOT},
+    \end{equation*}
+    where
+    \begin{itemize}
+    \item $M^\DOT$ is the number of items affected (strictly
+      positive discrete distribution)
+    \item $V$ is the value of an item (i.i.d.)
+    \end{itemize}
+  \end{assumption}
+  \pause
+
+  \begin{consequence}
+    $X_{ij}^\DOT$ is a compound zero-truncated
+  \end{consequence}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Additional complexity}
+
+  We want to determine premiums by \alert{range} of market value (or
+  size) of the collection.
+
+  \begin{center}
+    \setlength{\unitlength}{1mm}
+    \begin{picture}(120,35)
+      \put(0,20){\line(1,0){110}}
+      \multiput(112,20)(2,0){5}{\line(1,0){1}}
+
+      \put( 0,19){\line(0,1){2}}
+      \put(30,19){\line(0,1){2}}
+      \put(80,19){\line(0,1){2}}
+      \put( 0,16){\makebox(0,0){0}}
+      \put(30,16){\makebox(0,0){\$}}
+      \put(80,16){\makebox(0,0){\$\$}}
+
+      \put( 0,25){\makebox(30,0){$( \hfill \pi^{[\text{small}]} \hfill ]$}}
+      \put(30,25){\makebox(50,0){$( \hfill \pi^{[\text{medium}]} \hfill ]$}}
+      \put(80,25){\makebox(42,0){$( \hfill \pi^{[\text{large}]} \hfill )$}}
+
+      \only<2->{
+        \put( 15,10){\makebox(0,8){\vector(0,-1){8}}}
+        \put( 55,10){\makebox(0,8){\vector(0,-1){8}}}
+        \put(101,10){\makebox(0,8){\vector(0,-1){8}}}
+
+        \put( 15,2){\makebox(0,0){$M^{[\ast,\text{ small}]}$}}
+        \put( 55,2){\makebox(0,0){$M^{[\ast,\text{ medium}]}$}}
+        \put(101,2){\makebox(0,0){$M^{[\ast,\text{ large}]}$}}
+      }
+    \end{picture}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Parametrization}
+
+  We need to determine the following elements from judgment, expert
+  opinion or collateral data:
+  \begin{itemize}
+  \item Poisson parameters $\lambda^\bris$, $\lambda^\feu$ and
+    $\lambda^\eau$ for the number of claims by type of peril
+  \item Zero-truncated distributions of the number of items affected
+    per range of collection value
+  \item Distribution of insureds among ranges of collection value
+  \item Market value of an item
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Pricing and capital allocation}
+
+  \begin{itemize}
+  \item Average aggregate claim amount in range
+    $k = 1, \dots, K$ of collection value:
+    \begin{equation*}
+      W^{(k)} = \frac{S_1^{(k)} + \dots + S_{n_k}^{(k)}}{n_k}
+    \end{equation*}
+  \item Average aggregate claim amount in portfolio:
+    \begin{equation*}
+      W = \frac{\sum_{k = 1}^K n_k W^{(k)}}{n}
+      = \frac{\sum_{k = 1}^K \sum_{i = 1}^{n_k} S_i^{(k)}}{n},
+    \end{equation*}
+  \item<2-> Pure premiums: $\esp{W}$ and $\esp{W^{(k)}}$
+  \item<3-> Global premium with safety loading:
+    \begin{equation*}
+      \pi = \TVaR_\alpha(W) = \esp{W|W > \VaR_\alpha(W)}
+    \end{equation*}
+  \item<4-> Allocation per range of collection value
+    \citep[section~10.2.3]{Marceau:modelisation:2013}:
+    \begin{equation*}
+      \pi^{(k)} = \TVaR_\alpha(W^{(k)}; W) =
+      \frac{\esp{W^{(k)} \times \mathbb{1}_{\{W > \VaR_\alpha(W)\}}}}{1 - \alpha}
+    \end{equation*}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Implementation}
+
+  \begin{itemize}
+  \item Simulation in R to compute premiums
+  \item Useful functions from package \textbf{actuar} \citep{actuar}:
+    \begin{itemize}
+    \item[] \texttt{rmixture}
+    \item[] \texttt{rcomppois}
+    \item[] \texttt{rcompound}
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-engine: xetex
+%%% TeX-master: "ime-2017-insurance-of-things"
+%%% End:
