@@ -33,3 +33,7 @@ See the [releases](https://github.com/vigou3/ime-2017-insurance-things/releases/
 download the latest version of the slides in PDF format.
 
 ## Changelog
+
+### 1.0 (2017-06-30)
+
+- Initial release; should be close to final.
