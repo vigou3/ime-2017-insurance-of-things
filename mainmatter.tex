@@ -17,13 +17,12 @@
     \includegraphics*[height=1.5\TPVertModule,width=\TPHorizModule]{Pokemon_collection}
     \includegraphics*[height=1.5\TPVertModule,width=\TPHorizModule]{360px-Wall_of_guitars}
   \end{textblock*}
-
 \end{frame}
 
 \section{Game changer}
 
 \begin{frame}
-  \frametitle{Insurance of Things}
+  \frametitle{Internet of Things}
 
   \begin{minipage}{0.48\linewidth}
     \includegraphics[width=\linewidth]{Internet_of_Things}
@@ -35,12 +34,15 @@
     \item monitor each individual item in a collection
     \item assess market value of collection in real time
     \end{itemize}
+    Dawn of the \alert{Insurance of Things}.
   \end{minipage}
 \end{frame}
 
 \section{Actuarial challenges}
 
-\begin{frame}[plain]
+\begin{frame}
+  \frametitle{Pricing without prior data}
+
   \begin{enumerate}
   \item No prior data
     \begin{itemize}
@@ -59,7 +61,7 @@
     \medskip
   \item Premium by range of collection ``size''
     \begin{itemize}
-    \item capital allocation problem
+    \item allocation of capital
     \end{itemize}
   \end{enumerate}
 \end{frame}
@@ -182,14 +184,14 @@
   \item Poisson parameters $\lambda^\bris$, $\lambda^\feu$ and
     $\lambda^\eau$ for the number of claims by type of peril
   \item Zero-truncated distributions of the number of items affected
-    per range of collection value
+    per type of peril and range of collection value
   \item Distribution of insureds among ranges of collection value
   \item Market value of an item
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Pricing and capital allocation}
+  \frametitle{Pricing and allocation of capital}
 
   \begin{itemize}
   \item Average aggregate claim amount in range
@@ -200,7 +202,7 @@
   \item Average aggregate claim amount in portfolio:
     \begin{equation*}
       W = \frac{\sum_{k = 1}^K n_k W^{(k)}}{n}
-      = \frac{\sum_{k = 1}^K \sum_{i = 1}^{n_k} S_i^{(k)}}{n},
+      = \frac{\sum_{k = 1}^K \sum_{i = 1}^{n_k} S_i^{(k)}}{n}
     \end{equation*}
   \item<2-> Pure premiums: $\esp{W}$ and $\esp{W^{(k)}}$
   \item<3-> Global premium with safety loading:

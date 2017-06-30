@@ -9,9 +9,7 @@
 ## Author: Vincent Goulet
 ##
 ## This file is part of project "A Foray Into the Insurance of Things,
-## Or Pricing Individual Objects Without Prior Data - 21st
-## International Congress on Insurance: Mathematics and Economics (IME
-## 2017)"
+## Or Pricing Individual Objects Without Prior Data - IME 2017"
 ## http://github.com/vigou3/ime-2017-insurance-of-things
 
 ## Key files
