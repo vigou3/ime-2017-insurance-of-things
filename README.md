@@ -29,7 +29,7 @@ application.
 
 ## Obtaining the slides
 
-See the [releases](https://github.com/vigou3/ime-2017-insurance-things/releases/latest) page to
+See the [releases](https://github.com/vigou3/ime-2017-insurance-of-things/releases/latest) page to
 download the latest version of the slides in PDF format.
 
 ## Changelog
