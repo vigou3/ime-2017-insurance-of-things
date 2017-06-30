@@ -1,5 +1,4 @@
-# A foray into the insurance of things, or pricing individual objects
-# without prior data
+# A foray into the insurance of things, or pricing individual objects without prior data
 
 > Talk at the
 > [21st International Congress on Insurance: Mathematics and Economics (IME 2017)](https://fam.tuwien.ac.at/events/ime2017/)
