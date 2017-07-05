@@ -1,7 +1,7 @@
 # A foray into the insurance of things, Or pricing individual objects without prior data
 
 > Talk at the
-> [21<sup>st</sup> International Congress on Insurance: Mathematics and Economics &ndash; IME 2017](https://fam.tuwien.ac.at/events/ime2017/)
+> [21<sup>st</sup> International Congress on Insurance: Mathematics and Economics (IME 2017)](https://fam.tuwien.ac.at/events/ime2017/)
 
 ## Author
 
